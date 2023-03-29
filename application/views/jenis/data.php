@@ -40,7 +40,7 @@
                 if ($jenis) :
                     foreach ($jenis as $j) :
                         ?>
-                        <tr>
+                        <tr onclick="window.location='detail_qc/detail/<?php echo $j['id_jenis']; ?>'" style="cursor: pointer;">
                             <td><?= $no++; ?></td>
                             <td><?= $j['Project_Year']; ?></td>
                             <td><?= $j['Project_No']; ?></td>

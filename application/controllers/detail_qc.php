@@ -10,6 +10,7 @@ class detail_qc extends CI_Controller
 
         $this->load->model('Admin_model', 'admin');
         $this->load->library('form_validation');
+        $this->load->database();
     }
 
     public function index()
@@ -75,5 +76,13 @@ class detail_qc extends CI_Controller
             set_pesan('Something went wrong', false);
         }
         redirect('detail_qc');
+    }
+
+    public function detail($id)
+    {
+        $data['title'] = "Detail QC";
+        $data['detail_qc'] = $this->admin->get('detail_qc');
+        $data['nama'] = $this->db->select('nama_jenis')->where('id_jenis', $id)->get('jenis')->result_array()[0]['nama_jenis'];
+        $this->template->load('templates/dashboard', 'detail_qc/data', $data);
     }
 }

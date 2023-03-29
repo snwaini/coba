@@ -55,3 +55,6 @@ $route['translate_uri_dashes'] = FALSE;
 $route['login'] = 'auth';
 $route['logout'] = 'auth/logout';
 $route['register'] = 'auth/register';
+
+// detail qc
+//$route['tes/(:num)'] = 'detail_qc/detail/$1';
